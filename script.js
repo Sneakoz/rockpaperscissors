@@ -58,7 +58,7 @@ function playGame() {
     let replay = prompt("Replay? y/n")
     if (replay == 'y') {
         win = 0
-        lose = 0
+        loss = 0
         playGame()
     }
 }
