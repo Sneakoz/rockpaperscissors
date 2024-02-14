@@ -1,3 +1,7 @@
+let win = 0;
+let loss = 0;
+playGame()
+
 function getComputerChoice() {
     let options = [
         "ROCK", "PAPER", "SCISSORS"
@@ -6,8 +10,6 @@ function getComputerChoice() {
     return selection = options[random];
 }
 
-let win = 0;
-let loss = 0;
 
 function playRound(player, comp) {
     player = player.toUpperCase();
@@ -52,5 +54,11 @@ function playGame() {
         console.log(`You won ${win}-${loss}`)
     } else {
         console.log(`You lost ${loss}-${win}`)
+    }
+    let replay = prompt("Replay? y/n")
+    if (replay == 'y') {
+        win = 0
+        lose = 0
+        playGame()
     }
 }
