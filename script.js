@@ -52,8 +52,10 @@ function playGame() {
     }
     if (win > loss) {
         console.log(`You won ${win}-${loss}`)
-    } else {
+    } else if (loss > win){
         console.log(`You lost ${loss}-${win}`)
+    } else {
+        console.log(`You drew ${win}-${loss}`)
     }
     let replay = prompt("Replay? y/n")
     if (replay == 'y') {
