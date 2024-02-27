@@ -55,6 +55,7 @@ scissorsbtn.addEventListener('click', () => playGame('scissors'))
 function playGame(player) {
     let comp = getComputerChoice()
     result = playRound(player, comp)
+    resultdiv.textContent = result
     console.log(result)
     // if (win > loss) {
     //     console.log(`You won ${win}-${loss}`)
