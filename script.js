@@ -1,12 +1,11 @@
 let win = 0;
 let loss = 0;
-playGame()
 
 function getComputerChoice() {
     let options = [
         "ROCK", "PAPER", "SCISSORS"
     ];
-    let random = Math.floor(Math.random()*3);
+    let random = Math.floor(Math.random() * 3);
     return selection = options[random];
 }
 
@@ -44,23 +43,30 @@ function playRound(player, comp) {
     }
 }
 
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-        let player = prompt("Enter Rock, Paper or Scissors")
-        let comp = getComputerChoice()
-        console.log(playRound(player, comp))
-    }
-    if (win > loss) {
-        console.log(`You won ${win}-${loss}`)
-    } else if (loss > win){
-        console.log(`You lost ${loss}-${win}`)
-    } else {
-        console.log(`You drew ${win}-${loss}`)
-    }
-    let replay = prompt("Replay? y/n")
-    if (replay == 'y') {
-        win = 0
-        loss = 0
-        playGame()
-    }
+const rockbtn = document.querySelector('#rock')
+const paperbtn = document.querySelector('#paper')
+const scissorsbtn = document.querySelector('#scissors')
+const resultdiv = document.querySelector('div')
+
+rockbtn.addEventListener('click', () => playGame('rock'))
+paperbtn.addEventListener('click', () => playGame('paper'))
+scissorsbtn.addEventListener('click', () => playGame('scissors'))
+
+function playGame(player) {
+    let comp = getComputerChoice()
+    result = playRound(player, comp)
+    console.log(result)
+    // if (win > loss) {
+    //     console.log(`You won ${win}-${loss}`)
+    // } else if (loss > win) {
+    //     console.log(`You lost ${loss}-${win}`)
+    // } else {
+    //     console.log(`You drew ${win}-${loss}`)
+    // }
+    // let replay = prompt("Replay? y/n")
+    // if (replay == 'y') {
+    //     win = 0
+    //     loss = 0
+    //     playGame()
+    // }
 }
